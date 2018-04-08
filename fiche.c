@@ -497,7 +497,7 @@ static void dispatch_connection(int socket, Fiche_Settings *settings) {
     }
 
     // Set timeout for accepted socket
-    const struct timeval timeout = { 0, 500 };
+    const struct timeval timeout = { 1, 0 };
 
     if ( setsockopt(s, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout)) != 0 ) {
         print_error("Couldn't set a timeout!");
